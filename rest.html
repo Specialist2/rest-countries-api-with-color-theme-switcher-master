@@ -17,7 +17,10 @@
     </header>
     <hr />
     <div class="input">
-      <input type="text" placeholder="country/city" />
+      <input type="text" id="countryinput" placeholder="country/city" />
+
+      <button onclick="getCountryInfo()">Search</button>
+
       <select type="" name="country" id="country">
         <option value="Africa">Africa</option>
         <option value="America">America</option>
@@ -26,7 +29,7 @@
         <option value="Oceania">Oceania</option>
       </select>
     </div>
-    <div class="countries"></div>
+    <div class="result" id="result"></div>
 
     <script src="rest.js"></script>
   </body>

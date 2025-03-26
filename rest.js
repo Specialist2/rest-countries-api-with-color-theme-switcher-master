@@ -1,18 +1,38 @@
-async function getCountry() {
-  const response = await fetch(`https://restcountries.com/v3.1/all`);
-  const data = await response.json();
-  console.log(data);
-  data.slice(0, 20).forEach((country) => {
-    let container = document.querySelector(".countries");
-    container.innerHTML += `
-  <div>
-  <img src="${country.flags.svg}" alt="flag" width="100" height="100"><br>
-  <h2>${country.name.common}<h2>
-  <span>${country.population}</span><br>
-  </div>`;
-  });
-  // calling a function to put the data in the UI - dom manipulation
-  /*  return data;
-  data.forEach((country) => {}); */
+function getCountryInfo() {
+  let countryName = document.getElementById("countryinput").value.trim();
+
+  if (countryName === "") {
+    alert("Please enter a country name");
+    return;
+  }
+
+  let apiUrl = `https://restcountries.com/v3.1/name/${countryName}`;
+
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Country not found");
+      }
+
+      return response.json();
+    })
+    .then((data) => {
+      let country = data[0];
+      let countryFlag = country.flags.svg; // Country flag URL
+      let countryPopulation = country.population.toLocaleString(); // Format population with commas
+
+      // Update the result div with country information
+      document.getElementById("result").innerHTML = `
+        
+        <h2>${country.name.common}</h2>
+        <p><strong>Population:</strong> ${countryPopulation}</p>
+        <img src="${country.flags.svg}" alt="Flag of ${country.name.common}" />
+      `;
+    })
+    .catch((error) => {
+      // If there’s an error (e.g., country not found), display the error message
+      document.getElementById(
+        "result"
+      ).innerHTML = `<p style="color:red;">${error.message}</p>`;
+    });
 }
-getCountry();
