@@ -1,8 +1,9 @@
 header {
   display: flex;
   justify-content: space-between;
-  margin-left: 80px;
+  padding: 7px;
   align-items: center;
+  background-color: hsl(209, 23%, 22%);
 }
 .toggle-button {
   display: flex;
@@ -23,11 +24,11 @@ header {
   border-radius: 15px;
   margin-right: 50px;
 }
-hr {
-  box-shadow: 2px 2px 1px rgb(8, 8, 8);
-}
+
 .input {
-  margin-left: 80px;
+  width: 80%;
+  margin: 20px auto;
+
   display: flex;
   justify-content: space-between;
 }
@@ -38,4 +39,50 @@ hr {
 body {
   color: white;
   background-color: hsl(207, 26%, 17%);
+}
+#result img {
+  width: 100%;
+}
+.dark-mode {
+  color: hsl(207, 26%, 17%);
+  background-color: rgba(245, 250, 255, 0.936);
+}
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 20px auto;
+
+  gap: 20px;
+}
+.country-container {
+  background-color: hsl(209, 23%, 22%);
+  width: 20%;
+  text-align: center;
+}
+.dark-mode header,
+.dark-mode .country-container,
+.dark-mode #country-input,
+.dark-mode #country,
+.dark-mode button {
+  color: hsl(209, 23%, 22%);
+  background-color: rgb(223, 228, 234);
+}
+#country-input {
+  color: white;
+  background-color: hsl(209, 23%, 22%);
+  border: none;
+  padding: 5px;
+}
+#country {
+  color: white;
+  background-color: hsl(209, 23%, 22%);
+  border: none;
+  padding: 5px;
+}
+button {
+  color: white;
+  background-color: hsl(209, 23%, 22%);
+  border: none;
+  padding: 5px;
 }

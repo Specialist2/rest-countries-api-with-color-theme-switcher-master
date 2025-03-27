@@ -10,20 +10,19 @@
     <header>
       <h1>Where in the world?</h1>
 
-      <button class="toggle-button" onclick="toggleMode()">
-        <img src="mode-icon.png" alt="" />
+      <button class="mode-button" id="mode">
+        <img src="" alt="" />
         <span>Dark Mode</span>
       </button>
     </header>
-    <hr />
+
     <div class="input">
-      <input type="text" id="countryinput" placeholder="country/city" />
+      <input type="text" id="country-input" placeholder="country/city" />
 
-      <button onclick="getCountryInfo()">Search</button>
-
-      <select type="" name="country" id="country">
+      <select type="" name="region" id="country">
+        <option value="all">All</option>
         <option value="Africa">Africa</option>
-        <option value="America">America</option>
+        <option value="Americas">Americas</option>
         <option value="Asia">Asia</option>
         <option value="Europe">Europe</option>
         <option value="Oceania">Oceania</option>
